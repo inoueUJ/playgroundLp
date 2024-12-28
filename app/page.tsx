@@ -1,15 +1,37 @@
 import Link from "next/link";
+import { client } from "../libs/microcms";
 
-const Home = () => {
-  return (
-    <div>
-      <h1>Home</h1>
-      <p>Hello World! This is the Home page</p>
-      <p>
-        Visit the <Link href="/about">About</Link> page.
-      </p>
-    </div>
-  );
+// ブログ記事の型定義
+type Blog = {
+  id: string;
+  title: string;
 };
 
-export default Home;
+// microCMSからブログ記事を取得
+async function getBlogPosts(): Promise<Blog[]> {
+  const data = await client.get({
+    endpoint: "blog",
+    queries: {
+      fields: "id,title",
+      limit: 100,
+    },
+  });
+  return data.contents;
+}
+
+export default async function Home() {
+  const blogPosts = await getBlogPosts();
+  return (
+    <main>
+      <h1>ブログ記事一覧</h1>
+      {/* ブログ記事を表示する */}
+      <ul>
+        {blogPosts.map((item) => (
+          <li key={item.id}>
+            <Link href={`/blog/${item.id}`}>{item.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
+}
