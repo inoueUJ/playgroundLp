@@ -1,37 +1,51 @@
-import Link from "next/link";
-import { client } from "../libs/microcms";
-
-// ブログ記事の型定義
-type Blog = {
-  id: string;
-  title: string;
-};
+import type { NewsItem } from "@/constants/news";
+import { client } from "@/libs/microcms";
+import Image from "next/image";
+import InformationSection from "./_components/informationSection";
+import type { Video } from "@/constants/video";
+import YoutubeCarousel from "./_components/youtubeCarousel";
+// import ImageCarousel from "./_components/imageCarousel";
 
 // microCMSからブログ記事を取得
-async function getBlogPosts(): Promise<Blog[]> {
+async function getInformationPost(): Promise<NewsItem[]> {
   const data = await client.get({
-    endpoint: "blog",
+    endpoint: "news",
     queries: {
-      fields: "id,title",
-      limit: 100,
+      fields: "id,publishedAt,title,description,images,publishDate",
+    },
+  });
+  return data.contents;
+}
+// microCMSからVideo記事を取得
+async function getVideoPost(): Promise<Video[]> {
+  const data = await client.get({
+    endpoint: "video",
+    queries: {
+      fields: "id,title,images,published_at,youtube_url",
     },
   });
   return data.contents;
 }
 
 export default async function Home() {
-  const blogPosts = await getBlogPosts();
+  const infoData = await getInformationPost();
+  const videoData = await getVideoPost();
+
   return (
     <main>
-      <h1>ブログ記事一覧</h1>
-      {/* ブログ記事を表示する */}
-      <ul>
-        {blogPosts.map((item) => (
-          <li key={item.id}>
-            <Link href={`/blog/${item.id}`}>{item.title}</Link>
-          </li>
-        ))}
-      </ul>
+      {/* ファーストビュー */}
+      <div className="relative h-screen">
+        <Image
+          src="/home.jpeg"
+          alt="Band Hero Image"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+      </div>
+      {/* <ImageCarousel data={infoData} /> */}
+      <InformationSection data={infoData} />
+      <YoutubeCarousel data={videoData} />
     </main>
   );
 }
