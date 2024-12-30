@@ -26,9 +26,7 @@ export default function ContactPage() {
           <Card className="p-6">
             <h2 className="mb-4 font-medium text-lg">▼お問い合わせ先</h2>
             <div className="flex items-center justify-between rounded-lg border bg-gray-50 p-3">
-              <span className="font-mono">
-                yangskinny_info@ve.jvcmusic.co.jp
-              </span>
+              <span className="font-mono">shinnosuke@boss.co.jp</span>
               <Button
                 variant="ghost"
                 size="sm"
@@ -50,11 +48,11 @@ export default function ContactPage() {
               ▼ファンレター等の送り先
             </h2>
             <div className="space-y-2 text-gray-700">
-              <p>〒150-0011</p>
-              <p>東京都渋谷区東1-2-20 渋谷ファーストタワー9F</p>
-              <p>Happy House内 ヤングスキニー宛</p>
+              <p>〒810-0011</p>
+              <p>福岡県福岡市中央区</p>
+              <p> Boss babyー宛</p>
               <p className="mt-4 text-gray-500 text-sm">
-                (メンバー宛の場合は 例：「ヤングスキニー かやゆー宛」)
+                (メンバー宛の場合は 例：「Bossbaby しんのすけ宛」)
               </p>
             </div>
           </Card>
