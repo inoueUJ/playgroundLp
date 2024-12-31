@@ -23,15 +23,14 @@ export default async function NewsDetailPage({
 
   return (
     <main>
-      <div className="min-h-screen bg-white pt-24">
+      <div className="min-h-screen bg-white pt-24 pb-5">
         <div className="container mx-auto max-w-4xl px-4">
           <Card className="overflow-hidden">
             <div className="space-y-8 p-6 md:p-8">
               {/* Date */}
               <p>{dayjs(newsItem.createdAt).format("YY.MM.DD")}</p>
-
               {/* Title */}
-              <h1 className="font-medium text-2xl leading-relaxed md:text-3xl">
+              <h1 className="font-bold text-2xl leading-relaxed md:text-3xl">
                 {newsItem.title}
               </h1>
 

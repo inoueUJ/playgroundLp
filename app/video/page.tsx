@@ -24,7 +24,7 @@ export default async function VideoPage() {
           <h1 className="mb-16 text-center font-light text-4xl tracking-wider">
             VIDEO
           </h1>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 pb-5 md:grid-cols-2">
             {videoData.map((video) => (
               <Link
                 key={video.id}

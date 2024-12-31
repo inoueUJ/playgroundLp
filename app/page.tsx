@@ -36,7 +36,7 @@ export default async function Home() {
       {/* ファーストビュー */}
       <div className="relative h-[50vh] w-full sm:h-[60vh] md:h-[70vh] lg:h-screen">
         <Image
-          src="/home.jpeg"
+          src="/top_img.webp"
           alt="Band Hero Image"
           layout="fill"
           objectFit="cover"

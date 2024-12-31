@@ -33,12 +33,20 @@ const Header = () => {
 
   const socialLinks = [
     {
-      href: "https://www.instagram.com/",
+      href: "https://www.instagram.com/bossbaby_2002?igsh=MWFsbHFxajZrbXZ6YQ==/",
       Icon: FaInstagram,
       label: "Instagram",
     },
-    { href: "https://www.youtube.com/", Icon: FaYoutube, label: "YouTube" },
-    { href: "https://www.tiktok.com/", Icon: FaTiktok, label: "TikTok" },
+    {
+      href: "https://www.youtube.com/@Bossbaby_officialYouTube",
+      Icon: FaYoutube,
+      label: "YouTube",
+    },
+    {
+      href: "https://www.tiktok.com/@bossbaby_official.2002?_t=8sgPv6Zudzs&_r=1",
+      Icon: FaTiktok,
+      label: "TikTok",
+    },
   ];
 
   return (

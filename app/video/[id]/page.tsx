@@ -21,7 +21,7 @@ export default async function VideoDetailPage({
   const videoId = videoItem.youtube_url.split("/").pop();
 
   return (
-    <div className="min-h-screen bg-white pt-16 sm:pt-20 md:pt-24">
+    <main className="min-h-screen bg-white pt-16 sm:pt-20 md:pt-24">
       <div className="container mx-auto max-w-4xl px-4">
         <h1 className="mb-16 text-center font-light text-4xl tracking-wider">
           {videoItem.title}
@@ -38,14 +38,14 @@ export default async function VideoDetailPage({
         </div>
         <div className="mt-8">
           <a
-            href="/information"
+            href="/video"
             className="inline-flex items-center text-gray-600 text-sm hover:text-gray-900"
           >
             ← 一覧に戻る
           </a>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

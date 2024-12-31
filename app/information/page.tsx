@@ -21,7 +21,7 @@ export default async function InformationPage() {
 
   return (
     <main>
-      <div className="min-h-screen bg-white pt-24">
+      <div className="min-h-screen bg-white pt-24 ">
         <div className="container mx-auto max-w-4xl px-4">
           <h1 className="mb-16 text-center font-light text-4xl tracking-wider">
             INFORMATION
