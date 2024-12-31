@@ -10,16 +10,16 @@ const InformationSection = ({ data }: NewsSectionProps) => {
   const latestNews = data.slice(0, 4);
 
   return (
-    <section className="py-16">
+    <section className="py-16 sm:py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-8 flex flex-col items-center justify-between sm:flex-row">
           <div className="w-24" /> {/* 左側のスペーサー */}
           <h2 className="font-bold text-2xl tracking-wider">INFORMATION</h2>
           <Link
             href="/information"
-            className="w-24 text-right text-sm transition-opacity hover:opacity-70"
+            className="text-sm transition-opacity hover:opacity-70 sm:text-base"
           >
-            VIEW ALL
+            VIEW ALL →
           </Link>
         </div>
         <div className="flex flex-col items-center space-y-6">
@@ -33,7 +33,7 @@ const InformationSection = ({ data }: NewsSectionProps) => {
               </p>
               <h3 className="flex-1 text-start">
                 <Link
-                  href={`/news/${item.id}`}
+                  href={`/information/${item.id}`}
                   className="transition-opacity hover:opacity-70"
                 >
                   {item.title}
