@@ -34,16 +34,16 @@ export default async function Home() {
   return (
     <main>
       {/* ファーストビュー */}
-      <div className="relative h-screen">
+      <div className="relative h-[50vh] w-full sm:h-[60vh] md:h-[70vh] lg:h-screen">
         <Image
           src="/home.jpeg"
           alt="Band Hero Image"
           layout="fill"
           objectFit="cover"
           priority
+          sizes="100vw"
         />
       </div>
-      {/* <ImageCarousel data={infoData} /> */}
       <InformationSection data={infoData} />
       <YoutubeCarousel data={videoData} />
     </main>

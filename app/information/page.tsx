@@ -26,7 +26,6 @@ export default async function InformationPage() {
           <h1 className="mb-16 text-center font-light text-4xl tracking-wider">
             INFORMATION
           </h1>
-
           <div className="space-y-8">
             {post.map((news) => (
               <Link
